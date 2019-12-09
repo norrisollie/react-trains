@@ -1,7 +1,8 @@
 import { FETCH_TRAINS } from "../actions/types"
 
 const initialState = {
-    receivedTrainData: []
+    receivedTrainData: [],
+    receivedTimetableData: []
 }
 
 export default function (state = initialState, action) {
@@ -13,6 +14,13 @@ export default function (state = initialState, action) {
                 receivedTrainData: action.payload
             }
             break;
+            case "FETCH_TIMETABLE":
+                    console.log("FETCHING THE TIMETABLE!")
+                    return {
+                        ...state,
+                        receivedTimetableData: action.payload
+                    }
+                    break;
 
         default:
             console.log("DEFAULT")

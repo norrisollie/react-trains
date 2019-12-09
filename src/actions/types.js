@@ -1,1 +1,2 @@
 export const FETCH_TRAINS = "FETCH_TRAINS"
+export const FETCH_TIMETABLE = "FETCH_TIMETABLE"

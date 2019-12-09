@@ -21,21 +21,13 @@ body {
   top: 20vh;
   left: 0;
   width: 100vw;
-  height: 80vh;
+  min-height: 80vh;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px;
-}
-
-.footer {
-  position: absolute;
-  top: 100vh;
-  left: 0;
-  width: 100vw;
-  height: 20vh;
-  background-color: lightgrey;
+  box-sizing: border-box;
 }
 
 .departure-wrapper {
@@ -46,6 +38,8 @@ body {
   min-width: 300px;
   width: 100%;
   max-width: 600px;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .destination-name {
@@ -71,6 +65,14 @@ body {
   font-weight: bold;
 }
 
+.departure-platform {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 10px;
+}
+
 .departure-cta {
   background-color: #888;
   color: #fff;
@@ -82,10 +84,27 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .cta-arrow {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgZmlsbD0iI0ZGRkZGRiI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyCgkJCWMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4CgkJCWMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1CgkJCWM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPg==");
+  margin-left: 5px;
+}
+
+.departure-status {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.departure-status.late {
+  color: red;
+}
+
+.aimed-time {
+  width: 100%;
+  text-align: center;
 }
