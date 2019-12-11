@@ -30,16 +30,34 @@ body {
   box-sizing: border-box;
 }
 
+.departures-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .departure-wrapper {
   display: flex;
   flex-direction: column;
   background-color: #eee;
   margin-bottom: 20px;
-  min-width: 300px;
-  width: 100%;
   max-width: 600px;
+  width: 100%;
   border-radius: 5px;
   overflow: hidden;
+}
+
+.station-name-wrapper {
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+.departures-wrapper {
+  width: 100%;
 }
 
 .destination-name {
@@ -107,4 +125,17 @@ body {
 .aimed-time {
   width: 100%;
   text-align: center;
+}
+
+.timetable-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  padding: 20px;
+  min-width: 300px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
 }

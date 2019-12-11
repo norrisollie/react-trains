@@ -1,6 +1,8 @@
 import { combineReducers } from "redux"
-import trainsReducer from "./trainsReducer"
+import getServiceTimetable from "./serviceTimetable"
+import getStationTimetable from "./stationTimetable"
 
 export default combineReducers({
-    trainDepartures: trainsReducer
+    getServiceTimetable,
+    getStationTimetable
 })

@@ -1,52 +1,48 @@
 import React, { Component } from 'react';
 import propTypes from "prop-types"
 import { connect } from "react-redux"
-import { fetchTrains } from "../actions/fetchTrains"
 import DepartureBox from './DepartureBox';
-import { fetchTimetable } from '../actions/fetchTimetable';
+import { getStationTimetable } from '../actions/getStationTimetable';
+import { getServiceTimetable } from '../actions/getServiceTimetable';
 
 class Main extends Component {
-
     componentDidMount = () => {
-        this.props.fetchTrains()
+        this.props.getStationTimetable()
     }
 
-    componentDidUpdate = (nextProps) => {
-        if(nextProps) {
-            console.log(nextProps)
-        }
-    }
-
-    handleClick = (e, xxxx) => {
-        this.props.fetchTimetable(e, xxxx)
-    }
-
-    render() {
+    render = () => {
 
         console.log(this.props)
 
-        const departures = this.props.trainData.trainDepartures.receivedTrainData.map((departure, index) => {
+        const departureBoxes = this.props.stationTimetable.stationInfo.map((departureBox, index) => {
 
-            return <DepartureBox key={index} {...departure} handleClick={this.handleClick} />
-
-        });
+            const service = this.props.serviceTimetable
+            return <DepartureBox key={index} {...departureBox} />
+        })
 
         return (
             <div className="main">
-                {departures}
+                <div className="station-name-wrapper">Departures from Leigh-on-Sea</div>
+                <div className="departures-wrapper">
+                    {departureBoxes}
+                </div>
             </div>
-        );
+        )
     }
 }
 
 Main.propTypes = {
-    fetchTrains: propTypes.func.isRequired
+    getStationTimetable: propTypes.func.isRequired
 }
 
-const mapStateToProps = state => ({
-    trainData: state
-})
+const mapStateToProps = state => {
+    const { getStationTimetable, getServiceTimetable } = state;
+    return {
+        stationTimetable: getStationTimetable,
+        serviceTimetable: getServiceTimetable
+    };
+};
 
-export default connect(mapStateToProps, { fetchTrains, fetchTimetable })(Main)
+export default connect(mapStateToProps, { getStationTimetable, getServiceTimetable })(Main)
 
 
